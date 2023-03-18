@@ -1,7 +1,7 @@
-from django.urls import include, path
-
 from rest_framework import routers
 from rest_framework.authtoken import views
+
+from django.urls import include, path
 
 from .views import CommentViewSet, GroupViewSet, PostViewSet
 
@@ -9,7 +9,7 @@ router = routers.DefaultRouter()
 router.register("posts", PostViewSet, basename="posts")
 router.register("groups", GroupViewSet, basename="groups")
 router.register(
-    r"posts/(?P<post_id>\d+)/comments", CommentViewSet, basename="commets"
+    r"posts/(?P<post_id>\d+)/comments", CommentViewSet, basename="comments"
 )
 
 urlpatterns = [
